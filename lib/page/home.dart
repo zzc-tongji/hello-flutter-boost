@@ -39,6 +39,14 @@ class Home extends StatelessWidget {
                     urlParams: {'text': 'Welcome to use FlutterBoost.'});
               },
             ),
+            RaisedButton(
+              child: Text('Open "native://web-view"'),
+              onPressed: () {
+                FlutterBoost.singleton.open('native://web-view', urlParams: {
+                  'url': 'https://huodong.m.taobao.com/idle/cslp98.html'
+                });
+              },
+            ),
           ],
         ),
       ),

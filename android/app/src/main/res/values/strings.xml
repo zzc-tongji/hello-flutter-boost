@@ -1,5 +1,5 @@
 <resources>
-    <string name="title">语音合成 TTS</string>
+    <string name="text_to_speech_activity_title">语音合成 TTS</string>
     <string name="edit_text_default">欢迎使用阿里云语音合成服务。Welcome to use TTS service of Alibaba Cloud.</string>
     <string name="play">播放 Play</string>
     <string name="interrupt">打断 Interrupt</string>

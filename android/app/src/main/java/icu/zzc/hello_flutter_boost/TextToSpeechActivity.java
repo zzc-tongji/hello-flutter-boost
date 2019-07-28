@@ -61,7 +61,7 @@ public class TextToSpeechActivity extends AppCompatActivity /* implements Adapte
         supportRequestWindowFeature(WindowCompat.FEATURE_ACTION_BAR);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(this.getString(R.string.title));
+        actionBar.setTitle(this.getString(R.string.text_to_speech_activity_title));
 
         setContentView(R.layout.activity_text_to_speech);
         

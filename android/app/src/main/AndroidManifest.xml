@@ -8,7 +8,8 @@
     <application
         android:name=".EntryPoint"
         android:icon="@mipmap/ic_launcher"
-        android:label="hello_flutter_boost">
+        android:label="hello_flutter_boost"
+        android:theme="@style/Theme.AppCompat.Light">
         <activity
             android:name=".FlutterContainerActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -35,8 +36,10 @@
         </activity>
         <activity
             android:name=".TextToSpeechActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.Light"></activity>
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

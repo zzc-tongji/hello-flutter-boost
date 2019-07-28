@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class PageRouter {
 
+    public static final String WEB_VIEW_URL = "native://web-view";
     public static final String FLUTTER_CONTAINER_URL = "native://flutter-container";
     public static final String TEXT_TO_SPEECH_URL = "native://text-to-speech";
 
@@ -25,6 +26,9 @@ public class PageRouter {
         // router
         Intent intent;
         switch (url) {
+            case WEB_VIEW_URL:
+                intent = new Intent(context, WebViewActivity.class);
+                break;
             case FLUTTER_CONTAINER_URL:
                 intent = new Intent(context, FlutterContainerActivity.class);
                 break;
