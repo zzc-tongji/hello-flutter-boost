@@ -9,6 +9,7 @@ import java.util.Map;
 public class PageRouter {
 
     public static final String FLUTTER_CONTAINER_URL = "native://flutter-container";
+    public static final String TEXT_TO_SPEECH_URL = "native://text-to-speech";
 
     public static void openPageByUrl(Context context, String url, Map<String, Object> params) {
         // parse parameter
@@ -26,6 +27,9 @@ public class PageRouter {
         switch (url) {
             case FLUTTER_CONTAINER_URL:
                 intent = new Intent(context, FlutterContainerActivity.class);
+                break;
+            case TEXT_TO_SPEECH_URL:
+                intent = new Intent(context, TextToSpeechActivity.class);
                 break;
             default:
                 return;

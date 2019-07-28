@@ -4,11 +4,9 @@ import 'package:flutter_boost2/flutter_boost.dart';
 import 'communication.dart';
 
 class Home extends StatelessWidget {
-  Map _parameters;
+  final Map _parameters;
 
-  Home([Map params]) {
-    _parameters = params;
-  }
+  Home([this._parameters]);
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +30,13 @@ class Home extends StatelessWidget {
               onPressed: () {
                 FlutterBoost.singleton.open('native://flutter-container',
                     urlParams: {'url': 'flutter://communication?from=native'});
+              },
+            ),
+            RaisedButton(
+              child: Text('Open "native://text-to-speech"'),
+              onPressed: () {
+                FlutterBoost.singleton.open('native://text-to-speech',
+                    urlParams: {'text': 'Welcome to use FlutterBoost.'});
               },
             ),
           ],

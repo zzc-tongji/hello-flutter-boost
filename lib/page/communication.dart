@@ -4,11 +4,9 @@ import 'package:flutter_boost2/flutter_boost.dart';
 import 'home.dart';
 
 class Communication extends StatelessWidget {
-  Map _parameters;
+  final Map _parameters;
 
-  Communication([Map params]) {
-    _parameters = params;
-  }
+  Communication([this._parameters]);
 
   @override
   Widget build(BuildContext context) {
