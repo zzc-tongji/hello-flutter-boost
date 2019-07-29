@@ -3,4 +3,7 @@
     <string name="edit_text_default">欢迎使用阿里云语音合成服务。Welcome to use TTS service of Alibaba Cloud.</string>
     <string name="play">播放 Play</string>
     <string name="interrupt">打断 Interrupt</string>
+    <string name="home">主页 Home</string>
+    <string name="communication">通信机制 Communication</string>
+    <string name="about">关于 About</string>
 </resources>

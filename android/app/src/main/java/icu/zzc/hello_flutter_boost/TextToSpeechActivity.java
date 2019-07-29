@@ -28,6 +28,8 @@ import com.alibaba.idst.util.SpeechSynthesizer;
 import com.alibaba.idst.util.SpeechSynthesizerCallback;
 
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 调用 SpeechSynthesizer 的示例代码，用户在实际业务中可以用此处提供的 AudioPlayer 播放声音，也可以自行实现相关功能
@@ -268,5 +270,23 @@ public class TextToSpeechActivity extends AppCompatActivity /* implements Adapte
 
             }
         }
+    }
+
+    public void homeButtonOnClick(View view) {
+        Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("url", "flutter://home");
+        PageRouter.openPageByUrl(TextToSpeechActivity.this, PageRouter.FLUTTER_CONTAINER_URL, hashMap);
+    }
+
+    public void communicationButtonOnClick(View view) {
+        Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("url", "flutter://communication");
+        PageRouter.openPageByUrl(TextToSpeechActivity.this, PageRouter.FLUTTER_CONTAINER_URL, hashMap);
+    }
+
+    public void aboutButtonOnClick(View view) {
+        Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("url", "https://github.com/alibaba/flutter_boost");
+        PageRouter.openPageByUrl(TextToSpeechActivity.this, PageRouter.WEB_VIEW_URL, hashMap);
     }
 }

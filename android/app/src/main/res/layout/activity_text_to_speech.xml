@@ -17,12 +17,17 @@
         android:orientation="vertical"
         android:weightSum="1">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.4"
             android:ems="10"
+            android:gravity="top"
             android:inputType="textMultiLine"
             android:text="@string/edit_text_default" />
 
@@ -36,14 +41,65 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="startSynthesizer"
-                android:text="@string/play" />
+                android:text="@string/play"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/stopButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="cancelSynthesizer"
-                android:text="@string/interrupt" />
+                android:text="@string/interrupt"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="36dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/homeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="homeButtonOnClick"
+                android:text="@string/home"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/communicationButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="communicationButtonOnClick"
+                android:text="@string/communication"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/aboutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="aboutButtonOnClick"
+                android:text="@string/about"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
