@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('主页 Home'),
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(

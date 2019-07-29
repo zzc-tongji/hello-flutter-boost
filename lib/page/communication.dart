@@ -12,7 +12,7 @@ class Communication extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Communication'),
+        title: Text('通信机制 Communication'),
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
