@@ -13,24 +13,40 @@ class Communication extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Communication'),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                // Just use `Navigator.of(context).pop();` to get back.
+                //
+                // FlutterBoost has encapsulated all things,
+                // no matter whether this is the first page
+                // of Activity (Android) or View Controller (iOS)
+                Navigator.of(context).pop();
+              },
+            );
+          },
+        ),
       ),
       body: Center(
         child: Column(
           children: [
-            Text(_parameters.toString()),
             RaisedButton(
-              child: Text('Open "flutter://home" by Flutter'),
+              child: Text('主页 Home'),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Home({'from': 'flutter'})));
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Home()));
               },
+              color: Colors.lightBlueAccent,
             ),
             RaisedButton(
-              child: Text('Open "flutter://home" by Native'),
+              child: Text('主页 Home'),
               onPressed: () {
                 FlutterBoost.singleton.open('native://flutter-container',
-                    urlParams: {'url': 'flutter://home?from=native'});
+                    urlParams: {'url': 'flutter://home'});
               },
+              color: Colors.lightGreenAccent,
             ),
           ],
         ),

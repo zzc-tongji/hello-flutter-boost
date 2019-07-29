@@ -233,8 +233,6 @@ public class TextToSpeechActivity extends AppCompatActivity /* implements Adapte
             Log.d(TAG, "OnSynthesisCompleted " + msg + ": " + String.valueOf(code));
             // 第八步，结束合成
             synthesizerWeakReference.get().stop();
-
-
         }
 
         // 调用失败的回调

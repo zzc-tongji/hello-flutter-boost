@@ -30,10 +30,11 @@ public class FlutterContainerActivity extends BoostFlutterActivity {
         try {
             u = this.getIntent().getExtras().getString("url");
             if (u == null) {
-                u = "flutter://home";
+                throw new NullPointerException();
             }
         } catch (NullPointerException e) {
-            throw new NullPointerException("There must be a parameter `url` to indicate which flutter page to render.");
+            // default flutter page
+            u = "flutter://home";
         }
         if (!u.startsWith("flutter://")) {
             throw new IllegalArgumentException("Parameter `url` is \"" + u + "\" which does not start with \"flutter://\".");

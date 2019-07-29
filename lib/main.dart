@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: FlutterBoost.init(),
+      // There must be an empty container here, or an error page will appear.
       home: Container(),
     );
   }

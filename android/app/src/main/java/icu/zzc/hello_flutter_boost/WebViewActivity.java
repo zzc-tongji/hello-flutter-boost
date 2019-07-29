@@ -22,6 +22,7 @@ public class WebViewActivity extends AppCompatActivity {
         supportRequestWindowFeature(WindowCompat.FEATURE_ACTION_BAR);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("Web View");
         // layout
         LinearLayout linearLayout = new LinearLayout(this);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -34,6 +35,7 @@ public class WebViewActivity extends AppCompatActivity {
         setContentView(linearLayout);
         // web view setting
         webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setDisplayZoomControls(false);
@@ -52,10 +54,11 @@ public class WebViewActivity extends AppCompatActivity {
         try {
             u = this.getIntent().getExtras().getString("url");
             if (u == null) {
-                u = "https://h5.m.taobao.com/";
+                throw new NullPointerException();
             }
         } catch (NullPointerException e) {
-            throw new NullPointerException("There must be a parameter `url` to indicate which HTML5 page to render.");
+            // default web page
+            u = "https://github.com/alibaba/flutter_boost";
         }
         if (!u.startsWith("http://") && !u.startsWith("https://")) {
             throw new IllegalArgumentException("Parameter `url` is \"" + u + "\" which does not start with \"http://\" or \"https://\".");
@@ -66,13 +69,11 @@ public class WebViewActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        webSettings.setJavaScriptEnabled(true);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        webSettings.setJavaScriptEnabled(false);
     }
 
     @Override

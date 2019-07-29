@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boost2/flutter_boost.dart';
 
 import 'communication.dart';
+import '../module/vw.dart';
 
 class Home extends StatelessWidget {
   final Map _parameters;
@@ -13,39 +14,55 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                // Just use `Navigator.of(context).pop();` to get back.
+                //
+                // FlutterBoost has encapsulated all things,
+                // no matter whether this is the first page
+                // of Activity (Android) or View Controller (iOS)
+                Navigator.of(context).pop();
+              },
+            );
+          },
+        ),
       ),
       body: Center(
         child: Column(
           children: [
-            Text(_parameters.toString()),
             RaisedButton(
-              child: Text('Open "flutter://communication" by Flutter'),
+              child: Text('通信机制 Communication'),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Communication({'from': 'flutter'})));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Communication()));
               },
+              color: Colors.lightBlueAccent,
             ),
             RaisedButton(
-              child: Text('Open "flutter://communication" by Native'),
+              child: Text('通信机制 Communication'),
               onPressed: () {
                 FlutterBoost.singleton.open('native://flutter-container',
-                    urlParams: {'url': 'flutter://communication?from=native'});
+                    urlParams: {'url': 'flutter://communication'});
               },
+              color: Colors.lightGreenAccent,
             ),
             RaisedButton(
-              child: Text('Open "native://text-to-speech"'),
+              child: Text('语音合成 TTS'),
               onPressed: () {
-                FlutterBoost.singleton.open('native://text-to-speech',
-                    urlParams: {'text': 'Welcome to use FlutterBoost.'});
+                FlutterBoost.singleton.open('native://text-to-speech');
               },
             ),
             RaisedButton(
-              child: Text('Open "native://web-view"'),
+              child: Text('关于 About'),
               onPressed: () {
                 FlutterBoost.singleton.open('native://web-view', urlParams: {
-                  'url': 'https://huodong.m.taobao.com/idle/cslp98.html'
+                  'url': 'https://github.com/alibaba/flutter_boost'
                 });
               },
+              color: Colors.orangeAccent,
             ),
           ],
         ),
